@@ -1,0 +1,203 @@
+{{ 'zcash-theme.css' | asset_url | stylesheet_tag }}
+
+<section class="zcash-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="zcash-section-header">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="zcash-section-header__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        <h2 class="zcash-section-header__title">{{ section.settings.heading }}</h2>
+      </div>
+      {%- if section.settings.description != blank -%}
+        <p>{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="zcash-grid zcash-grid--two">
+      <div class="zcash-card zcash-market__metrics">
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <div class="zcash-metric" {{ block.shopify_attributes }}>
+              <span class="zcash-metric__label">{{ block.settings.label }}</span>
+              <span class="zcash-metric__value">{{ block.settings.value }}</span>
+              {%- if block.settings.trend != blank -%}
+                <span class="zcash-metric__trend">{{ block.settings.trend }}</span>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class="zcash-metric">
+            <span class="zcash-metric__label">Price</span>
+            <span class="zcash-metric__value">$43.27</span>
+            <span class="zcash-metric__trend">+4.3% · 24h</span>
+          </div>
+          <div class="zcash-metric">
+            <span class="zcash-metric__label">Volume</span>
+            <span class="zcash-metric__value">$72M</span>
+            <span class="zcash-metric__trend">Across 18 markets</span>
+          </div>
+          <div class="zcash-metric">
+            <span class="zcash-metric__label">Shielded usage</span>
+            <span class="zcash-metric__value">68%</span>
+            <span class="zcash-metric__trend">Last 1,000 tx</span>
+          </div>
+        {%- endif -%}
+
+        <div class="zcash-market__convert">
+          <h3>{{ section.settings.convert_heading }}</h3>
+          <form>
+            <div class="zcash-input-group">
+              <input type="number" name="zcash_amount" placeholder="Amount" min="0" step="0.01">
+              <select name="zcash_pair">
+                <option value="ZEC">ZEC</option>
+                <option value="USD">USD</option>
+                <option value="BTC">BTC</option>
+              </select>
+            </div>
+            <div class="zcash-input-group">
+              <input type="text" readonly value="≈ $4,327.00">
+              <select name="zcash_quote">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="CAD">CAD</option>
+              </select>
+            </div>
+            <button type="button" class="button button--primary">
+              {{ section.settings.convert_cta }}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="zcash-card zcash-market__chart">
+        <div class="zcash-chart" role="img" aria-label="{{ section.settings.chart_label }}">
+          <svg viewBox="0 0 400 200" width="100%" height="100%" preserveAspectRatio="none">
+            <polyline
+              fill="none"
+              stroke="#45c0b6"
+              stroke-width="4"
+              points="0,140 40,150 80,120 120,160 160,110 200,130 240,90 280,120 320,60 360,110 400,70"
+            />
+            <polyline
+              fill="none"
+              stroke="rgba(18, 18, 18, 0.2)"
+              stroke-width="1"
+              points="0,160 400,160"
+            />
+          </svg>
+        </div>
+        <p>{{ section.settings.chart_caption }}</p>
+        <button type="button" class="button button--secondary">
+          {{ section.settings.chart_cta }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zcash market overview",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Prices & charts"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Live-market style telemetry"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Simulated quotes, market depth, and shielded statistics help you demo a ZEC exchange experience without touching production rails."
+    },
+    {
+      "type": "text",
+      "id": "convert_heading",
+      "label": "Convert module heading",
+      "default": "Convert ZEC to USD"
+    },
+    {
+      "type": "text",
+      "id": "convert_cta",
+      "label": "Convert button label",
+      "default": "Convert now"
+    },
+    {
+      "type": "text",
+      "id": "chart_label",
+      "label": "Chart aria label",
+      "default": "Chart showing price movement for ZEC over the past week"
+    },
+    {
+      "type": "textarea",
+      "id": "chart_caption",
+      "label": "Chart caption",
+      "default": "Chart showing price movement · overlay highlights shielded inflows versus transparent volume."
+    },
+    {
+      "type": "text",
+      "id": "chart_cta",
+      "label": "Chart button label",
+      "default": "Open advanced chart"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1",
+      "options": [
+        { "value": "background-1", "label": "Background 1" },
+        { "value": "background-2", "label": "Background 2" },
+        { "value": "inverse", "label": "Inverse" },
+        { "value": "accent-1", "label": "Accent 1" },
+        { "value": "accent-2", "label": "Accent 2" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "metric",
+      "name": "Metric",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Price"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "$43.27"
+        },
+        {
+          "type": "text",
+          "id": "trend",
+          "label": "Trend text",
+          "default": "+4.3% · 24h"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Zcash market overview",
+      "blocks": [
+        { "type": "metric" },
+        { "type": "metric" },
+        { "type": "metric" }
+      ]
+    }
+  ]
+}
+{% endschema %}

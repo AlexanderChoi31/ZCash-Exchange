@@ -1,0 +1,388 @@
+.zcash-section {
+  padding: 56px 0;
+}
+
+@media screen and (min-width: 990px) {
+  .zcash-section {
+    padding: 80px 0;
+  }
+}
+
+.zcash-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .zcash-section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.zcash-section-header__title {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.zcash-section-header__eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(18, 18, 18, 0.7);
+}
+
+.color-background-2 .zcash-section-header__eyebrow,
+.color-accent-1 .zcash-section-header__eyebrow,
+.color-accent-2 .zcash-section-header__eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.zcash-card {
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  border-radius: 16px;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 45px rgba(18, 18, 18, 0.08);
+}
+
+.color-background-2 .zcash-card,
+.color-accent-1 .zcash-card,
+.color-accent-2 .zcash-card {
+  background: rgba(12, 14, 25, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.zcash-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .zcash-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .zcash-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.zcash-hero__inner {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 990px) {
+  .zcash-hero__inner {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
+.zcash-hero__title {
+  font-size: clamp(2.5rem, 3vw + 1.5rem, 3.75rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.zcash-hero__description {
+  font-size: 1.1rem;
+  max-width: 50ch;
+  margin-bottom: 1.5rem;
+}
+
+.zcash-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.zcash-hero__stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.zcash-stat {
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.color-background-2 .zcash-stat,
+.color-accent-1 .zcash-stat,
+.color-accent-2 .zcash-stat {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.zcash-stat span:first-child {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.zcash-stat span:last-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.zcash-market__metrics {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .zcash-market__metrics {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  }
+}
+
+.zcash-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.zcash-metric__label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.7;
+}
+
+.zcash-metric__value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.zcash-metric__trend {
+  font-size: 0.95rem;
+}
+
+.zcash-market__chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.zcash-chart {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  border: 1px dashed rgba(18, 18, 18, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(69, 192, 182, 0.08),
+    rgba(69, 192, 182, 0.08) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
+
+.zcash-market__convert form {
+  display: grid;
+  gap: 1rem;
+}
+
+.zcash-input-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.zcash-input-group input,
+.zcash-input-group select {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.zcash-input-group input:focus-visible,
+.zcash-input-group select:focus-visible {
+  outline: 2px solid #45c0b6;
+}
+
+.zcash-trading__forms {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .zcash-trading__forms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.zcash-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.zcash-form label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.zcash-form input,
+.zcash-form select,
+.zcash-form textarea {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.zcash-form button {
+  margin-top: 0.5rem;
+}
+
+.zcash-wallet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.zcash-wallet__balance {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.zcash-wallet__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.zcash-chip {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(69, 192, 182, 0.15);
+  font-size: 0.85rem;
+}
+
+.zcash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.zcash-actions .button {
+  flex: 1 1 140px;
+  justify-content: center;
+}
+
+.zcash-portfolio__summary {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .zcash-portfolio__summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.zcash-summary-card {
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.zcash-summary-card__label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.zcash-summary-card__value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.zcash-portfolio__table {
+  overflow-x: auto;
+}
+
+.portfolio-holding {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+}
+
+.portfolio-holding:last-child {
+  border-bottom: 0;
+}
+
+.zcash-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.zcash-table th,
+.zcash-table td {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+}
+
+.zcash-table thead {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(18, 18, 18, 0.15);
+}
+
+.zcash-table tbody tr + tr {
+  border-top: 1px solid rgba(18, 18, 18, 0.08);
+}
+
+.zcash-education__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+  .zcash-education__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.zcash-education-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.zcash-auth__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .zcash-auth__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.zcash-auth__card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}

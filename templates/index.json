@@ -1,0 +1,270 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "zcash-hero": {
+      "type": "zcash-hero",
+      "blocks": {
+        "hero-stat-1": {
+          "type": "stat",
+          "settings": {
+            "label": "Spot price",
+            "value": "$43.27"
+          }
+        },
+        "hero-stat-2": {
+          "type": "stat",
+          "settings": {
+            "label": "24h change",
+            "value": "+4.3%"
+          }
+        },
+        "hero-stat-3": {
+          "type": "stat",
+          "settings": {
+            "label": "Shielded tx",
+            "value": "68%"
+          }
+        }
+      },
+      "block_order": [
+        "hero-stat-1",
+        "hero-stat-2",
+        "hero-stat-3"
+      ],
+      "settings": {
+        "eyebrow": "Zcash Exchange",
+        "heading": "Private trading without compromise",
+        "subheading": "A fully fictional exchange UI that highlights shielded ZEC flows, compliance ready controls, and storytelling components for investor demos.",
+        "deposit_label": "Deposit ZEC",
+        "withdraw_label": "Withdraw ZEC",
+        "hero_note": "Demo-only interface — perfect for explaining shielded transfers.",
+        "color_scheme": "background-1"
+      }
+    },
+    "zcash-market": {
+      "type": "zcash-market-overview",
+      "blocks": {
+        "market-metric-1": {
+          "type": "metric",
+          "settings": {
+            "label": "Price",
+            "value": "$43.27",
+            "trend": "+4.3% · 24h"
+          }
+        },
+        "market-metric-2": {
+          "type": "metric",
+          "settings": {
+            "label": "Volume",
+            "value": "$72M",
+            "trend": "Across 18 markets"
+          }
+        },
+        "market-metric-3": {
+          "type": "metric",
+          "settings": {
+            "label": "Shielded usage",
+            "value": "68%",
+            "trend": "Last 1,000 tx"
+          }
+        }
+      },
+      "block_order": [
+        "market-metric-1",
+        "market-metric-2",
+        "market-metric-3"
+      ],
+      "settings": {
+        "eyebrow": "Prices",
+        "heading": "Market overview",
+        "description": "Simulated spot data, depth and shielded adoption stats make it clear this is an exchange-grade interface.",
+        "convert_heading": "Convert ZEC to USD",
+        "convert_cta": "Convert preview",
+        "chart_label": "Chart showing price movement over the past week",
+        "chart_caption": "Chart showing price movement · overlay the story you need while keeping everything fictional.",
+        "chart_cta": "Chart showing price movement",
+        "color_scheme": "background-1"
+      }
+    },
+    "zcash-trading": {
+      "type": "zcash-trading-panel",
+      "settings": {
+        "eyebrow": "Buy / Sell",
+        "heading": "Trading controls",
+        "description": "Instantly show how simplified onboarding, two-panel order tickets, and quick funding actions could feel.",
+        "buy_cta": "Buy ZEC",
+        "sell_cta": "Sell ZEC",
+        "wallet_balance": "1,245.82 ZEC",
+        "wallet_available": "845.21 ZEC",
+        "wallet_pending": "120.00 ZEC",
+        "wallet_shielded": "280.61 ZEC",
+        "deposit_label": "Deposit ZEC",
+        "withdraw_label": "Withdraw ZEC",
+        "convert_label": "Convert ZEC to USD",
+        "color_scheme": "background-1"
+      }
+    },
+    "zcash-portfolio": {
+      "type": "zcash-portfolio",
+      "blocks": {
+        "holding-1": {
+          "type": "holding",
+          "settings": {
+            "asset": "Shielded ZEC",
+            "allocation": "55%",
+            "detail": "Cold storage · 685 ZEC"
+          }
+        },
+        "holding-2": {
+          "type": "holding",
+          "settings": {
+            "asset": "Transparent ZEC",
+            "allocation": "20%",
+            "detail": "Market-making inventory"
+          }
+        },
+        "holding-3": {
+          "type": "holding",
+          "settings": {
+            "asset": "USD balance",
+            "allocation": "25%",
+            "detail": "$45k ready to deploy"
+          }
+        },
+        "tx-1": {
+          "type": "transaction",
+          "settings": {
+            "date": "Today · 08:20",
+            "action": "Deposit ZEC",
+            "amount": "+120.00 ZEC",
+            "status": "Shielded"
+          }
+        },
+        "tx-2": {
+          "type": "transaction",
+          "settings": {
+            "date": "Yesterday",
+            "action": "Convert ZEC to USD",
+            "amount": "-50.00 ZEC",
+            "status": "Settled"
+          }
+        },
+        "tx-3": {
+          "type": "transaction",
+          "settings": {
+            "date": "2 days ago",
+            "action": "Withdraw ZEC",
+            "amount": "-30.00 ZEC",
+            "status": "Pending"
+          }
+        }
+      },
+      "block_order": [
+        "holding-1",
+        "holding-2",
+        "holding-3",
+        "tx-1",
+        "tx-2",
+        "tx-3"
+      ],
+      "settings": {
+        "eyebrow": "Portfolio",
+        "heading": "Wallet balance & transaction history",
+        "description": "All numbers are fictional yet grounded enough for investor and user research walkthroughs.",
+        "summary_total": "$182,440",
+        "summary_change": "+$4,210 · past 24 hours",
+        "summary_wallet": "1,245.82 ZEC",
+        "summary_wallet_detail": "Available + pending",
+        "summary_shielded": "68% shielded",
+        "summary_shielded_detail": "Of last 40 transfers",
+        "color_scheme": "background-1"
+      }
+    },
+    "zcash-education": {
+      "type": "zcash-education",
+      "blocks": {
+        "edu-1": {
+          "type": "topic",
+          "settings": {
+            "title": "Shielded addresses",
+            "body": "Break down how z-addresses encrypt sender, receiver, and amounts with zk-SNARKs.",
+            "link_label": "Education pages",
+            "link": ""
+          }
+        },
+        "edu-2": {
+          "type": "topic",
+          "settings": {
+            "title": "Viewing keys",
+            "body": "Explain selective disclosure for regulators and auditors without revealing public data.",
+            "link_label": "View guide",
+            "link": ""
+          }
+        },
+        "edu-3": {
+          "type": "topic",
+          "settings": {
+            "title": "Compliance ready",
+            "body": "Show privacy plus compliance by pairing shielded pools with policy controls.",
+            "link_label": "Privacy brief",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "edu-1",
+        "edu-2",
+        "edu-3"
+      ],
+      "settings": {
+        "eyebrow": "Education",
+        "heading": "Explain Zcash",
+        "description": "Education pages covering shielded addresses, privacy, and regulatory readiness.",
+        "cta_heading": "Need a deeper dive?",
+        "cta_body": "Link to long-form explainers that walk through privacy design, proof systems, or your product vision.",
+        "cta_label": "Education pages",
+        "color_scheme": "background-2"
+      }
+    },
+    "zcash-auth": {
+      "type": "zcash-auth",
+      "settings": {
+        "eyebrow": "Account",
+        "heading": "Login / Signup mock pages",
+        "description": "Mock panels let you storyboard onboarding, device approvals, or 2FA without touching production auth.",
+        "login_heading": "Login",
+        "login_body": "Explain wallet unlock, viewing keys, and private access.",
+        "login_cta": "Sign in",
+        "signup_heading": "Create an account",
+        "signup_body": "Walk through KYC or demo waitlists without collecting real data.",
+        "signup_cta": "Join waitlist",
+        "color_scheme": "background-1"
+      }
+    }
+  },
+  "order": [
+    "zcash-hero",
+    "zcash-market",
+    "zcash-trading",
+    "zcash-portfolio",
+    "zcash-education",
+    "zcash-auth"
+  ]
+}
