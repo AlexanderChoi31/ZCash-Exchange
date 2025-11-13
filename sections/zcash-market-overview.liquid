@@ -1,4 +1,5 @@
 {{ 'zcash-theme.css' | asset_url | stylesheet_tag }}
+{{ 'zcash-live-tracker.js' | asset_url | script_tag }}
 
 <section class="zcash-section color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width">
@@ -16,6 +17,10 @@
 
     <div class="zcash-grid zcash-grid--two">
       <div class="zcash-card zcash-market__metrics">
+        <div class="zcash-hero__badge">
+          <span class="zcash-logo-mark" aria-hidden="true">{% render 'zcash-logo' %}</span>
+          <span>{{ section.settings.market_badge }}</span>
+        </div>
         {%- if section.blocks.size > 0 -%}
           {%- for block in section.blocks -%}
             <div class="zcash-metric" {{ block.shopify_attributes }}>
@@ -70,27 +75,77 @@
         </div>
       </div>
 
-      <div class="zcash-card zcash-market__chart">
-        <div class="zcash-chart" role="img" aria-label="{{ section.settings.chart_label }}">
-          <svg viewBox="0 0 400 200" width="100%" height="100%" preserveAspectRatio="none">
-            <polyline
+      <div
+        class="zcash-card zcash-ticker"
+        data-zcash-tracker
+        data-currency="{{ section.settings.live_currency | downcase }}"
+        data-interval="{{ section.settings.live_refresh_interval }}"
+        data-provider="coingecko"
+      >
+        <div class="zcash-hero__badge">
+          <span class="zcash-logo-mark" aria-hidden="true">{% render 'zcash-logo' %}</span>
+          <span>{{ section.settings.live_badge }}</span>
+        </div>
+        <div class="zcash-ticker__grid">
+          <div>
+            <p class="zcash-ticker__label">Spot price</p>
+            <p class="zcash-ticker__value" data-tracker-field="price">
+              {{ section.settings.live_placeholder_price }}
+            </p>
+            <p class="zcash-ticker__delta" data-tracker-field="change" data-direction="flat">
+              {{ section.settings.live_placeholder_change }}
+            </p>
+          </div>
+          <div>
+            <p class="zcash-ticker__label">Last update</p>
+            <p class="zcash-ticker__value" data-tracker-field="updated">--:--</p>
+            <p>{{ section.settings.live_timezone_note }}</p>
+          </div>
+          <div>
+            <p class="zcash-ticker__label">Source</p>
+            <p class="zcash-ticker__value">{{ section.settings.live_source_label }}</p>
+            <p>{{ section.settings.live_source_note }}</p>
+          </div>
+        </div>
+
+        <p class="zcash-ticker__label">{{ section.settings.live_range_label }}</p>
+        <div class="zcash-ticker__spark" role="img" aria-label="{{ section.settings.live_graph_label }}">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="spark-line-{{ section.id }}" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1fff9c"></stop>
+                <stop offset="100%" stop-color="#34ffa7"></stop>
+              </linearGradient>
+              <linearGradient id="spark-fill-{{ section.id }}" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(52, 255, 167, 0.35)"></stop>
+                <stop offset="100%" stop-color="rgba(52, 255, 167, 0)"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,110 L0,95 C40,80 80,92 120,70 C160,58 200,40 240,55 C280,35 320,44 360,32 C375,30 390,34 400,32 L400,110 Z"
+              fill="url(#spark-fill-{{ section.id }})"
+            ></path>
+            <path
+              d="M0,95 C40,80 80,92 120,70 C160,58 200,40 240,55 C280,35 320,44 360,32 C375,30 390,34 400,32"
+              stroke="url(#spark-line-{{ section.id }})"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               fill="none"
-              stroke="#45c0b6"
-              stroke-width="4"
-              points="0,140 40,150 80,120 120,160 160,110 200,130 240,90 280,120 320,60 360,110 400,70"
-            />
-            <polyline
-              fill="none"
-              stroke="rgba(18, 18, 18, 0.2)"
-              stroke-width="1"
-              points="0,160 400,160"
-            />
+            ></path>
+            <circle class="zcash-ticker__dot" cx="400" cy="32" r="5"></circle>
           </svg>
         </div>
-        <p>{{ section.settings.chart_caption }}</p>
-        <button type="button" class="button button--secondary">
-          {{ section.settings.chart_cta }}
-        </button>
+
+        <div class="zcash-ticker__meta">
+          <span>{{ section.settings.live_meta_one }}</span>
+          <span>{{ section.settings.live_meta_two }}</span>
+          <span>{{ section.settings.live_meta_three }}</span>
+        </div>
+
+        <p class="zcash-ticker__status" data-tracker-status>
+          {{ section.settings.live_status_label }}
+        </p>
       </div>
     </div>
   </div>
@@ -132,21 +187,101 @@
     },
     {
       "type": "text",
-      "id": "chart_label",
-      "label": "Chart aria label",
-      "default": "Chart showing price movement for ZEC over the past week"
-    },
-    {
-      "type": "textarea",
-      "id": "chart_caption",
-      "label": "Chart caption",
-      "default": "Chart showing price movement · overlay highlights shielded inflows versus transparent volume."
+      "id": "market_badge",
+      "label": "Metrics badge text",
+      "default": "Telemetry desk"
     },
     {
       "type": "text",
-      "id": "chart_cta",
-      "label": "Chart button label",
-      "default": "Open advanced chart"
+      "id": "live_badge",
+      "label": "Live tracker badge text",
+      "default": "Live tracker"
+    },
+    {
+      "type": "select",
+      "id": "live_currency",
+      "label": "Live currency",
+      "default": "usd",
+      "options": [
+        { "value": "usd", "label": "USD" },
+        { "value": "eur", "label": "EUR" },
+        { "value": "gbp", "label": "GBP" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "live_refresh_interval",
+      "label": "Refresh interval (seconds)",
+      "default": 30,
+      "min": 15,
+      "max": 120,
+      "step": 5
+    },
+    {
+      "type": "text",
+      "id": "live_placeholder_price",
+      "label": "Placeholder price",
+      "default": "$43.27"
+    },
+    {
+      "type": "text",
+      "id": "live_placeholder_change",
+      "label": "Placeholder change",
+      "default": "+4.3%"
+    },
+    {
+      "type": "text",
+      "id": "live_timezone_note",
+      "label": "Timezone note",
+      "default": "Local time"
+    },
+    {
+      "type": "text",
+      "id": "live_source_label",
+      "label": "Source label",
+      "default": "CoinGecko"
+    },
+    {
+      "type": "textarea",
+      "id": "live_source_note",
+      "label": "Source note",
+      "default": "Public API · refreshed continuously"
+    },
+    {
+      "type": "text",
+      "id": "live_range_label",
+      "label": "Range label",
+      "default": "1 month view"
+    },
+    {
+      "type": "text",
+      "id": "live_graph_label",
+      "label": "Graph aria label",
+      "default": "One month ZEC price trend with real-time highlight"
+    },
+    {
+      "type": "text",
+      "id": "live_meta_one",
+      "label": "Meta badge 1",
+      "default": "Spot markets · simulated"
+    },
+    {
+      "type": "text",
+      "id": "live_meta_two",
+      "label": "Meta badge 2",
+      "default": "Shielded adoption narrative"
+    },
+    {
+      "type": "text",
+      "id": "live_meta_three",
+      "label": "Meta badge 3",
+      "default": "Updated automatically"
+    },
+    {
+      "type": "text",
+      "id": "live_status_label",
+      "label": "Live status label",
+      "default": "Live feed standing by"
     },
     {
       "type": "select",

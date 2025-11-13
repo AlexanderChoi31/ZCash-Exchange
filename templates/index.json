@@ -43,6 +43,7 @@
         "eyebrow": "Zcash Exchange",
         "heading": "Private trading without compromise",
         "subheading": "A fully fictional exchange UI that highlights shielded ZEC flows, compliance ready controls, and storytelling components for investor demos.",
+        "badge_text": "Privacy-grade exchange demo",
         "deposit_label": "Deposit ZEC",
         "withdraw_label": "Withdraw ZEC",
         "hero_note": "Demo-only interface — perfect for explaining shielded transfers.",
@@ -88,9 +89,21 @@
         "description": "Simulated spot data, depth and shielded adoption stats make it clear this is an exchange-grade interface.",
         "convert_heading": "Convert ZEC to USD",
         "convert_cta": "Convert preview",
-        "chart_label": "Chart showing price movement over the past week",
-        "chart_caption": "Chart showing price movement · overlay the story you need while keeping everything fictional.",
-        "chart_cta": "Chart showing price movement",
+        "market_badge": "Telemetry desk",
+        "live_badge": "Live tracker",
+        "live_currency": "usd",
+        "live_refresh_interval": 30,
+        "live_placeholder_price": "$43.27",
+        "live_placeholder_change": "+4.3%",
+        "live_timezone_note": "Local time",
+        "live_source_label": "CoinGecko",
+        "live_source_note": "Public API · refreshed continuously",
+        "live_range_label": "1 month view",
+        "live_graph_label": "One month ZEC trend with real-time ping",
+        "live_meta_one": "Spot markets · simulated",
+        "live_meta_two": "Shielded adoption narrative",
+        "live_meta_three": "Updated automatically",
+        "live_status_label": "Live feed standing by",
         "color_scheme": "background-1"
       }
     },
@@ -103,6 +116,8 @@
         "buy_cta": "Buy ZEC",
         "sell_cta": "Sell ZEC",
         "wallet_balance": "1,245.82 ZEC",
+        "wallet_badge": "ZEC Vault",
+        "wallet_subtitle": "Wallet balance (simulated)",
         "wallet_available": "845.21 ZEC",
         "wallet_pending": "120.00 ZEC",
         "wallet_shielded": "280.61 ZEC",
@@ -234,6 +249,73 @@
         "color_scheme": "background-2"
       }
     },
+    "zcash-marquee": {
+      "type": "zcash-ecosystem-marquee",
+      "blocks": {
+        "marquee-1": {
+          "type": "story",
+          "settings": {
+            "logo_text": "ZEC",
+            "meta": "Zashi",
+            "title": "Zashi mobile wallet",
+            "subtitle": "Shielded-first UX",
+            "body": "Demonstrate how Zashi guides users through shielded payments, transparent views, and fiat ramps.",
+            "link_label": "See Zashi",
+            "link": "https://electriccoin.co/zashi/"
+          }
+        },
+        "marquee-2": {
+          "type": "story",
+          "settings": {
+            "logo_text": "@X",
+            "meta": "Zooko",
+            "title": "Zooko on X",
+            "subtitle": "Founder commentary",
+            "body": "Pull live talking points from Zooko’s feed to back your product vision.",
+            "link_label": "Open X",
+            "link": "https://twitter.com/zooko"
+          }
+        },
+        "marquee-3": {
+          "type": "story",
+          "settings": {
+            "logo_text": "ECC",
+            "meta": "Electric Coin Co",
+            "title": "ECC blog",
+            "subtitle": "Protocol + product",
+            "body": "Reference privacy research, roadmaps, and compliance explainers.",
+            "link_label": "Visit blog",
+            "link": "https://electriccoin.co/blog/"
+          }
+        },
+        "marquee-4": {
+          "type": "story",
+          "settings": {
+            "logo_text": "ZF",
+            "meta": "Zcash Foundation",
+            "title": "Community governance",
+            "subtitle": "Nodes, grants, research",
+            "body": "Anchor your pitch to ZF’s work on Zebra, grants, and governance.",
+            "link_label": "View site",
+            "link": "https://www.zfnd.org/"
+          }
+        }
+      },
+      "block_order": [
+        "marquee-1",
+        "marquee-2",
+        "marquee-3",
+        "marquee-4"
+      ],
+      "settings": {
+        "eyebrow": "Ecosystem",
+        "heading": "People and products to cite",
+        "description": "Auto-scroll through Zashi, Zooko, ECC, and ZF to keep storytelling moving.",
+        "status_label": "Auto scrolling every 4s",
+        "interval": 4,
+        "color_scheme": "background-1"
+      }
+    },
     "zcash-auth": {
       "type": "zcash-auth",
       "settings": {
@@ -255,6 +337,7 @@
     "zcash-market",
     "zcash-trading",
     "zcash-portfolio",
+    "zcash-marquee",
     "zcash-education",
     "zcash-auth"
   ]

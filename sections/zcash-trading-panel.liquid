@@ -45,8 +45,12 @@
         </form>
       </div>
 
-      <div class="zcash-card zcash-wallet">
-        <p class="zcash-section-header__eyebrow">Wallet balance (simulated)</p>
+      <div class="zcash-card zcash-wallet zcash-card--highlight">
+        <div class="zcash-hero__badge">
+          <span class="zcash-logo-mark" aria-hidden="true">{% render 'zcash-logo' %}</span>
+          <span>{{ section.settings.wallet_badge | default: 'Wallet balance (simulated)' }}</span>
+        </div>
+        <p class="zcash-section-header__eyebrow">{{ section.settings.wallet_subtitle | default: 'Wallet balance (simulated)' }}</p>
         <p class="zcash-wallet__balance">{{ section.settings.wallet_balance }}</p>
         <div class="zcash-wallet__chips">
           <span class="zcash-chip">Available · {{ section.settings.wallet_available }}</span>
@@ -102,6 +106,18 @@
       "id": "wallet_balance",
       "label": "Wallet balance",
       "default": "1,245.82 ZEC"
+    },
+    {
+      "type": "text",
+      "id": "wallet_badge",
+      "label": "Wallet badge text",
+      "default": "ZEC Vault"
+    },
+    {
+      "type": "text",
+      "id": "wallet_subtitle",
+      "label": "Wallet subtitle",
+      "default": "Wallet balance (simulated)"
     },
     {
       "type": "text",

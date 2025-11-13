@@ -3,9 +3,17 @@
 <section class="zcash-section zcash-hero color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width zcash-hero__inner">
     <div class="zcash-hero__content">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="zcash-section-header__eyebrow">{{ section.settings.eyebrow }}</p>
-      {%- endif -%}
+      <div class="zcash-hero__badge">
+        <span class="zcash-logo-mark zcash-logo-mark--xl" aria-hidden="true">{% render 'zcash-logo' %}</span>
+        <div>
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="zcash-section-header__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          {%- if section.settings.badge_text != blank -%}
+            <span>{{ section.settings.badge_text }}</span>
+          {%- endif -%}
+        </div>
+      </div>
       <h1 class="zcash-hero__title">{{ section.settings.heading }}</h1>
       {%- if section.settings.subheading != blank -%}
         <p class="zcash-hero__description">{{ section.settings.subheading }}</p>
@@ -48,6 +56,7 @@
           <span>68%</span>
         </div>
       {%- endif -%}
+      <div class="zcash-sparkline" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -61,6 +70,12 @@
       "id": "eyebrow",
       "label": "Eyebrow text",
       "default": "Introducing Zcash Exchange"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Privacy-grade exchange demo"
     },
     {
       "type": "text",
