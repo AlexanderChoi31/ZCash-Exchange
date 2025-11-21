@@ -7,7 +7,8 @@
           "type": "note",
           "settings": {
             "title": "Humanist sans-serifs",
-            "body": "Use friendly, readable sans-serifs (GT America, Söhne, Akkurat) instead of geometric faces."
+            "body": "Use friendly, readable sans-serifs (GT America, Söhne, Akkurat) instead of geometric faces.",
+            "font_family": "'GT America', 'Sohne', 'Akkurat', 'Helvetica Neue', sans-serif"
           }
         },
         "guideline-2": {
@@ -27,7 +28,8 @@
           "type": "note",
           "settings": {
             "title": "Warm serifs for editorial",
-            "body": "Freight Text, Lyon Text, Tiempos, or Garamond for long-form content."
+            "body": "Freight Text, Lyon Text, Tiempos, or Garamond for long-form content.",
+            "font_family": "'Freight Text', 'Lyon Text', 'Tiempos Text', 'Georgia', serif"
           }
         },
         "guideline-5": {
@@ -48,7 +50,8 @@
           "type": "note",
           "settings": {
             "title": "Font palette",
-            "body": "Sans: GT America, Söhne, Akkurat. Serifs: Freight Text, Lyon Text, Tiempos. Avoid overly cold Helvetica and geometric sans."
+            "body": "Sans: GT America, Söhne, Akkurat. Serifs: Freight Text, Lyon Text, Tiempos. Avoid overly cold Helvetica and geometric sans.",
+            "font_family": "'Freight Text', 'GT America', 'Helvetica Neue', serif"
           }
         }
       },

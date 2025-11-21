@@ -6,7 +6,11 @@
   </header>
   <div class="nordic-history">
     {%- for block in section.blocks -%}
-      <article class="nordic-history__entry" {{ block.shopify_attributes }}>
+      <article
+        class="nordic-history__entry"
+        style="{% if block.settings.font_family != blank %}font-family: {{ block.settings.font_family }};{% endif %}"
+        {{ block.shopify_attributes }}
+      >
         <h3>{{ block.settings.title }}</h3>
         <p>{{ block.settings.body }}</p>
       </article>
@@ -27,7 +31,8 @@
       "name": "Text tile",
       "settings": [
         { "type": "text", "id": "title", "label": "Title", "default": "Humanist sans-serifs" },
-        { "type": "textarea", "id": "body", "label": "Body", "default": "Friendly, readable sans-serifs instead of strict geometric faces." }
+        { "type": "textarea", "id": "body", "label": "Body", "default": "Friendly, readable sans-serifs instead of strict geometric faces." },
+        { "type": "text", "id": "font_family", "label": "Font family (CSS)", "default": "" }
       ]
     }
   ],
