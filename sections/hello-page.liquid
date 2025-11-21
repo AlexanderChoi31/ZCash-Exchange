@@ -1,0 +1,25 @@
+<section class="nordic-shell">
+  <header class="nordic-hero">
+    <p class="nordic-hero__eyebrow">Hello</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.copy }}</p>
+  </header>
+  <div class="nordic-history">
+    <article class="nordic-history__entry">
+      <h3>{{ section.settings.message_title }}</h3>
+      <p>{{ section.settings.message_body }}</p>
+    </article>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hello page",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "hello :)" },
+    { "type": "textarea", "id": "copy", "label": "Intro", "default": "A simple note from the studio." },
+    { "type": "text", "id": "message_title", "label": "Message title", "default": "hello :)" },
+    { "type": "textarea", "id": "message_body", "label": "Message", "default": "Thank you for wandering through this calm corner of the internet." }
+  ]
+}
+{% endschema %}

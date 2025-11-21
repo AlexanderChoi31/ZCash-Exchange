@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "main": {
+      "type": "hello-page"
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "main": {
+      "type": "founder-page"
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,27 @@
+<section class="nordic-shell">
+  <header class="nordic-hero">
+    <p class="nordic-hero__eyebrow">Founder</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.copy }}</p>
+  </header>
+  <div class="nordic-history">
+    <article class="nordic-history__entry">
+      <img src="{{ section.settings.image_url }}" alt="Founder portrait">
+      <h3>{{ section.settings.founder_name }}</h3>
+      <p>{{ section.settings.bio }}</p>
+    </article>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Founder page",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Meet the founder" },
+    { "type": "textarea", "id": "copy", "label": "Description", "default": "Nordic minimalism, curated by a single voice." },
+    { "type": "text", "id": "image_url", "label": "Portrait URL", "default": "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=60" },
+    { "type": "text", "id": "founder_name", "label": "Name", "default": "Ingrid Dahl" },
+    { "type": "textarea", "id": "bio", "label": "Bio", "default": "Ingrid sources tactile pieces across Scandinavia, blending heritage craft with quiet technology." }
+  ]
+}
+{% endschema %}

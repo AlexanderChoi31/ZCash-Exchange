@@ -1,0 +1,67 @@
+<section class="nordic-shell">
+  <header class="nordic-hero">
+    <p class="nordic-hero__eyebrow">Nordic minimalism style</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.copy }}</p>
+    {%- assign hero_image = section.settings.hero_image_url | default: 'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1600&q=60' -%}
+    <div class="nordic-hero__image">
+      <img src="{{ hero_image }}" alt="Nordic minimalism mood">
+    </div>
+  </header>
+
+  <div class="nordic-history">
+    {%- for block in section.blocks -%}
+      <article class="nordic-history__entry" {{ block.shopify_attributes }}>
+        <time>{{ block.settings.period }}</time>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.body }}</p>
+        {%- if block.settings.image_url != blank -%}
+          <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title }} imagery">
+        {%- endif -%}
+        {%- if block.settings.source_label != blank and block.settings.source_url != blank -%}
+          <p><a class="nordic-button" href="{{ block.settings.source_url }}" target="_blank" rel="noopener">{{ block.settings.source_label }}</a></p>
+        {%- endif -%}
+      </article>
+    {%- endfor -%}
+  </div>
+
+  <footer class="nordic-footer">
+    <p>{{ section.settings.footer_text }}</p>
+  </footer>
+</section>
+
+{% schema %}
+{
+  "name": "Nordic canvas",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Nordic Minimalism Style" },
+    { "type": "textarea", "id": "copy", "label": "Description", "default": "Warm serifs, soft light, and calm storytelling inspired by Scandinavian interiors." },
+    { "type": "text", "id": "hero_image_url", "label": "Hero image URL", "default": "https://images.unsplash.com/photo-1455778977538-607804425183?auto=format&fit=crop&w=1600&q=60" },
+    { "type": "text", "id": "footer_text", "label": "Footer text", "default": "Sources and studies on Nordic minimalism." }
+  ],
+  "blocks": [
+    {
+      "type": "history",
+      "name": "History entry",
+      "settings": [
+        { "type": "text", "id": "period", "label": "Period", "default": "1930s" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Swedish Grace to Functionalism" },
+        { "type": "textarea", "id": "body", "label": "Body", "default": "Swedish Grace bridged Art Deco and functionalism, favoring quiet patterning and pale woods that still inform Nordic interiors." },
+        { "type": "text", "id": "image_url", "label": "Image URL", "default": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=60" },
+        { "type": "text", "id": "source_label", "label": "Source label", "default": "Scandinavia Standard" },
+        { "type": "text", "id": "source_url", "label": "Source URL", "default": "https://www.scandinaviastandard.com/a-brief-history-of-scandinavian-design/" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nordic canvas",
+      "blocks": [
+        { "type": "history" },
+        { "type": "history", "settings": { "period": "1950s", "title": "Danish modern warm serifs", "body": "Designers like Finn Juhl and Alvar Aalto emphasized organic lines, warm woods, and tactile textiles aligned with human scale.", "image_url": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=60", "source_label": "Designmuseum Danmark", "source_url": "https://designmuseum.dk/en/knowledge/designhistory/danish-design/" } },
+        { "type": "history", "settings": { "period": "Today", "title": "New Nordic calm", "body": "Studios blend hygge principles with sustainability: plinth tables, limewashed walls, and softened daylight photography.", "image_url": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=60", "source_label": "Kinfolk Magazine", "source_url": "https://www.kinfolk.com" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
