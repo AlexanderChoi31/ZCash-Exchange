@@ -1,0 +1,78 @@
+{
+  "sections": {
+    "main": {
+      "type": "colors-page",
+      "blocks": {
+        "base1": {
+          "type": "color",
+          "settings": {
+            "name": "Base — Warm white",
+            "color_hex": "#FAFAF9",
+            "description": "Warm white background",
+            "text_color": "#4A4A4A"
+          }
+        },
+        "base2": {
+          "type": "color",
+          "settings": {
+            "name": "Base — Linen",
+            "color_hex": "#F5F4F0",
+            "description": "Linen paper",
+            "text_color": "#4A4A4A"
+          }
+        },
+        "neutral1": {
+          "type": "color",
+          "settings": {
+            "name": "Neutral — Greige",
+            "color_hex": "#E5E3DD",
+            "description": "Greige walls",
+            "text_color": "#4A4A4A"
+          }
+        },
+        "neutral2": {
+          "type": "color",
+          "settings": {
+            "name": "Neutral — Warm gray",
+            "color_hex": "#CCC9C1",
+            "description": "Warm gray stone",
+            "text_color": "#4A4A4A"
+          }
+        },
+        "accent1": {
+          "type": "color",
+          "settings": {
+            "name": "Accent — Sage",
+            "color_hex": "#8B9A8A",
+            "description": "Sage green",
+            "text_color": "#FAFAF9"
+          }
+        },
+        "accent2": {
+          "type": "color",
+          "settings": {
+            "name": "Accent — Warm taupe",
+            "color_hex": "#B4A89A",
+            "description": "Warm taupe",
+            "text_color": "#4A4A4A"
+          }
+        },
+        "dark1": {
+          "type": "color",
+          "settings": {
+            "name": "Dark — Charcoal",
+            "color_hex": "#4A4A4A",
+            "description": "Charcoal grounding",
+            "text_color": "#FAFAF9"
+          }
+        }
+      },
+      "block_order": ["base1","base2","neutral1","neutral2","accent1","accent2","dark1"],
+      "settings": {
+        "headline": "Nordic palette",
+        "copy": "Color references used throughout the site."
+      }
+    }
+  },
+  "order": ["main"]
+}

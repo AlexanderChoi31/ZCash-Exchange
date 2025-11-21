@@ -1,0 +1,44 @@
+<section class="nordic-shell">
+  <header class="nordic-hero">
+    <p class="nordic-hero__eyebrow">Palette</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.copy }}</p>
+  </header>
+  <div class="nordic-history">
+    {%- for block in section.blocks -%}
+      <article class="nordic-history__entry" style="background: {{ block.settings.color_hex }}; color: {{ block.settings.text_color }}" {{ block.shopify_attributes }}>
+        <h3>{{ block.settings.name }}</h3>
+        <p>{{ block.settings.color_hex }}</p>
+        <p>{{ block.settings.description }}</p>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Colors page",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Nordic palette" },
+    { "type": "textarea", "id": "copy", "label": "Description", "default": "Warm neutrals and sage accents." }
+  ],
+  "blocks": [
+    {
+      "type": "color",
+      "name": "Color tile",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "Warm white" },
+        { "type": "text", "id": "color_hex", "label": "Hex", "default": "#FAFAF9" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Soft base tone." },
+        { "type": "text", "id": "text_color", "label": "Text color", "default": "#4A4A4A" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Colors page",
+      "blocks": [ { "type": "color" }, { "type": "color" } ]
+    }
+  ]
+}
+{% endschema %}
