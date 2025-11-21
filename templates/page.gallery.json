@@ -1,7 +1,44 @@
 {
   "sections": {
     "main": {
-      "type": "gallery-page"
+      "type": "gallery-page",
+      "blocks": {
+        "kinfolk": {
+          "type": "image",
+          "settings": {
+            "title": "Kinfolk.com",
+            "body": "Editorial layouts with Nordic minimalism cues: linen backgrounds, serif typography, diffused portraits.",
+            "image_url": "https://image.thum.io/get/width/1200/crop/900/https://www.kinfolk.com",
+            "link_url": "https://www.kinfolk.com",
+            "link_label": "Visit Kinfolk"
+          }
+        },
+        "norm": {
+          "type": "image",
+          "settings": {
+            "title": "NormArchitects.com",
+            "body": "Contemporary Scandinavian architecture showcased through restrained photography and charcoal text.",
+            "image_url": "https://image.thum.io/get/width/1200/crop/900/https://normarchitects.com",
+            "link_url": "https://normarchitects.com",
+            "link_label": "Visit Norm Architects"
+          }
+        },
+        "muji": {
+          "type": "image",
+          "settings": {
+            "title": "Muji.com",
+            "body": "Japanese interpretation of Nordic principles—quiet grids, linen textures, and warm neutrals.",
+            "image_url": "https://image.thum.io/get/width/1200/crop/900/https://www.muji.com",
+            "link_url": "https://www.muji.com",
+            "link_label": "Visit Muji"
+          }
+        }
+      },
+      "block_order": ["kinfolk", "norm", "muji"],
+      "settings": {
+        "headline": "Reference gallery",
+        "copy": "Screenshots from studios and brands that embody Nordic minimalism."
+      }
     }
   },
   "order": ["main"]

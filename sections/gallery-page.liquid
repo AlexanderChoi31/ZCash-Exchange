@@ -12,6 +12,9 @@
         {%- endif -%}
         <h3>{{ block.settings.title }}</h3>
         <p>{{ block.settings.body }}</p>
+        {%- if block.settings.link_url != blank -%}
+          <p><a href="{{ block.settings.link_url }}" target="_blank" rel="noopener">{{ block.settings.link_label | default: 'View site' }}</a></p>
+        {%- endif -%}
       </article>
     {%- endfor -%}
   </div>
@@ -31,7 +34,9 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Title", "default": "Oak + wool" },
         { "type": "textarea", "id": "body", "label": "Body", "default": "Soft oak cabinetry against natural wool textiles." },
-        { "type": "text", "id": "image_url", "label": "Image URL", "default": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=60" }
+        { "type": "text", "id": "image_url", "label": "Image URL", "default": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=60" },
+        { "type": "text", "id": "link_url", "label": "Link URL", "default": "https://nordic.example" },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "View site" }
       ]
     }
   ],
