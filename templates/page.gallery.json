@@ -8,7 +8,7 @@
           "settings": {
             "title": "Kinfolk.com",
             "body": "Editorial layouts with Nordic minimalism cues: linen backgrounds, serif typography, diffused portraits.",
-            "image_url": "https://image.thum.io/get/width/1200/crop/900/https://www.kinfolk.com",
+            "image_asset": "kinfolk.png",
             "link_url": "https://www.kinfolk.com",
             "link_label": "Visit Kinfolk"
           }
@@ -18,7 +18,7 @@
           "settings": {
             "title": "NormArchitects.com",
             "body": "Contemporary Scandinavian architecture showcased through restrained photography and charcoal text.",
-            "image_url": "https://image.thum.io/get/width/1200/crop/900/https://normarchitects.com",
+            "image_asset": "normarchitects.png",
             "link_url": "https://normarchitects.com",
             "link_label": "Visit Norm Architects"
           }
@@ -28,7 +28,7 @@
           "settings": {
             "title": "Muji.com",
             "body": "Japanese interpretation of Nordic principles—quiet grids, linen textures, and warm neutrals.",
-            "image_url": "https://image.thum.io/get/width/1200/crop/900/https://www.muji.com",
+            "image_asset": "muji.png",
             "link_url": "https://www.muji.com",
             "link_label": "Visit Muji"
           }

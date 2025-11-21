@@ -176,6 +176,14 @@ main {
   padding: 2.75rem;
   background: var(--color-linen);
   box-shadow: 0 18px 35px rgba(74, 74, 74, 0.06);
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.nordic-history__entry.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .nordic-history__entry h3 {

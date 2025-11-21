@@ -31,11 +31,31 @@
       (function () {
         var button = document.getElementById('nordic-menu-toggle');
         var drawer = document.getElementById('nordic-drawer');
-        if (!button || !drawer) return;
-        button.addEventListener('click', function () {
-          drawer.classList.toggle('is-open');
-          button.classList.toggle('is-open');
-        });
+        if (button && drawer) {
+          button.addEventListener('click', function () {
+            drawer.classList.toggle('is-open');
+            button.classList.toggle('is-open');
+          });
+        }
+
+        var entries = document.querySelectorAll('.nordic-history__entry');
+        if ('IntersectionObserver' in window && entries.length) {
+          var observer = new IntersectionObserver(function (items) {
+            items.forEach(function (item) {
+              if (item.isIntersecting) {
+                item.target.classList.add('is-visible');
+                observer.unobserve(item.target);
+              }
+            });
+          }, { threshold: 0.2 });
+          entries.forEach(function (entry) {
+            observer.observe(entry);
+          });
+        } else {
+          entries.forEach(function (entry) {
+            entry.classList.add('is-visible');
+          });
+        }
       })();
     </script>
   </body>
