@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "main": {
+      "type": "fonts-page",
+      "blocks": {
+        "guideline-1": {
+          "type": "note",
+          "settings": {
+            "title": "Humanist sans-serifs",
+            "body": "Use friendly, readable sans-serifs (GT America, Söhne, Akkurat) instead of geometric faces."
+          }
+        },
+        "guideline-2": {
+          "type": "note",
+          "settings": {
+            "title": "Generous line height",
+            "body": "Body copy sits at 1.6–1.8 line-height for calm breathing room."
+          }
+        },
+        "guideline-3": {
+          "type": "note",
+          "settings": {
+            "title": "Moderate scale",
+            "body": "Hierarchy is clear but gentle—no dramatic size jumps." }
+        },
+        "guideline-4": {
+          "type": "note",
+          "settings": {
+            "title": "Warm serifs for editorial",
+            "body": "Freight Text, Lyon Text, Tiempos, or Garamond for long-form content."
+          }
+        },
+        "guideline-5": {
+          "type": "note",
+          "settings": {
+            "title": "Letter spacing",
+            "body": "Add subtle tracking to uppercase or small text for breathing room."
+          }
+        },
+        "guideline-6": {
+          "type": "note",
+          "settings": {
+            "title": "Soft hierarchy",
+            "body": "Size, weight, and color shifts remain understated to keep the page calm."
+          }
+        },
+        "guideline-7": {
+          "type": "note",
+          "settings": {
+            "title": "Font palette",
+            "body": "Sans: GT America, Söhne, Akkurat. Serifs: Freight Text, Lyon Text, Tiempos. Avoid overly cold Helvetica and geometric sans."
+          }
+        }
+      },
+      "block_order": ["guideline-1","guideline-2","guideline-3","guideline-4","guideline-5","guideline-6","guideline-7"],
+      "settings": {
+        "headline": "Font choices",
+        "copy": "Our Nordic typographic palette."
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,41 @@
+<section class="nordic-shell">
+  <header class="nordic-hero">
+    <p class="nordic-hero__eyebrow">Font choices</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.copy }}</p>
+  </header>
+  <div class="nordic-history">
+    {%- for block in section.blocks -%}
+      <article class="nordic-history__entry" {{ block.shopify_attributes }}>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.body }}</p>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Font choices",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Typography guidance" },
+    { "type": "textarea", "id": "copy", "label": "Description", "default": "How we keep type warm, human, and calm." }
+  ],
+  "blocks": [
+    {
+      "type": "note",
+      "name": "Text tile",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Humanist sans-serifs" },
+        { "type": "textarea", "id": "body", "label": "Body", "default": "Friendly, readable sans-serifs instead of strict geometric faces." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Font choices",
+      "blocks": [ { "type": "note" }, { "type": "note" } ]
+    }
+  ]
+}
+{% endschema %}
